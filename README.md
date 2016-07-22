@@ -51,4 +51,4 @@ docker run -it --name php-nginx-cli php:7.0 /bin/bash
 
 #### CHANGELOG
 
-[Link](https://github.com/luk4z7/docker-build-php7-fpm-nginx/blob/master/CHANGELOG.md)
+[Link](https://github.com/totalbr/docker-build-php7-fpm-nginx/blob/master/CHANGELOG.md)
