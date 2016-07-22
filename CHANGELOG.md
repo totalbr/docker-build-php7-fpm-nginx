@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.0.7
+
+_Released: 2016-07-22_
+
+* Include instalation of the xdiff library
+* Install module pear xdiff for php work xdiff functions
+
 
 ## 0.0.6
 
