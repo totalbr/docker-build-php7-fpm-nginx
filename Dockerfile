@@ -81,6 +81,13 @@ RUN cd xdebug-2.4.0RC4 && ./configure && make && make install
 RUN cp /xdebug-2.4.0RC4/modules/xdebug.so $(php -i | grep extension | awk -F "=> " '{ print $3,$9 }')
 RUN echo "alias php_xdebug='php -dzend_extension=xdebug.so'" >> ~/.bashrc
 
+# xdiff
+RUN wget http://www.xmailserver.org/libxdiff-0.22.tar.gz
+RUN tar -xzf libxdiff-0.22.tar.gz
+RUN cd libxdiff-0.22 && chmod u+x ./configure
+RUN cd libxdiff-0.22 && ./configure && make && make install
+RUN pecl install xdiff
+
 # phpunit
 RUN wget https://phar.phpunit.de/phpunit.phar
 RUN chmod +x phpunit.phar
@@ -98,6 +105,9 @@ RUN composer global --no-interaction --working-dir=/var/.composer require symfon
 
 RUN sed -i '660s/auto_prepend_file =/ /g' /etc/php/7.0/fpm/php.ini \
     && sed -i '660a auto_prepend_file = /var/.composer/vendor/autoload.php' /etc/php/7.0/fpm/php.ini
+
+RUN echo extension=xdiff.so >> /etc/php/7.0/fpm/php.ini
+RUN echo extension=xdiff.so >> /etc/php/7.0/cli/php.ini
 
 # Install supervisor
 RUN easy_install supervisor && \
