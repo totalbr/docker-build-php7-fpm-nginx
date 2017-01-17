@@ -17,33 +17,31 @@ to generate your tests coverage.
 ------------------
 
 
-__To build execute:__
-```
-docker build -t php:7.0 .
-```
+**Execute the file `init.sh` for up the docker containers**
 
+```bash
 
-__Lauching a container from your new image:__
-```
-docker run -d -P --name php7-nginx php:7.0
-```
+https://github.com/totalbr/docker-build-php7-fpm-nginx for the canonical source repository 
+Environment Ubuntu, php7-fpm and nginx, container for execution diffs e-cidade
 
+ 
+ _____ ___ _____  _    _     ____  ____  
+|_   _/ _ \_   _|/ \  | |   | __ )|  _ \ 
+  | || | | || | / _ \ | |   |  _ \| |_) |
+  | || |_| || |/ ___ \| |___| |_) |  _ < 
+  |_| \___/ |_/_/   \_\_____|____/|_| \_\
+                                         
+ 
+DOCKER
+Generate new containers ? [ 1 ] 
+Delete all containers ?   [ 2 ] 
+Start new build ?         [ 3 ]
 
-__Binding to a specific port:__
 ```
-docker run -d -p 8080:80 --name php7-nginx php:7.0
-```
-
-
-__Bind mount a volume:__
-```
-docker run -d -v /home/user/workspaces/app/:/var/www php:7.0
-```
-
 
 __Access a shell:__
 ```
-docker run -it --name php-nginx-cli php:7.0 /bin/bash
+docker exec -it php7 bash
 ```
 
 -------
