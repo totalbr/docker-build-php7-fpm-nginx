@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  php7:
+    container_name: php7
+    build: ./
+    volumes:
+     - ./:/var/www
