@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 0.0.8
+
+_Released: 2017-01-17_
+
+* diff.php para a execução dos diffs
+* docker-compose.yml para gerenciar os containers
+* init.sh para start, pause e build dos containers
+
+
 ## 0.0.7
 
 _Released: 2016-07-22_
